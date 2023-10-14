@@ -11,12 +11,14 @@ class Contenido:
             'content': self.content
         }
 class Video:
-    def __init__(self, url="", transcription=None, description=None, resume="", category=""):
+    def __init__(self, url="", transcription=None, description=None, resume="", category="", cod="", title=""):
         self.url = url
         self.transcription = transcription
         self.description = description
         self.resume = resume
         self.category = category
+        self.cod = cod
+        self.title = title
 
     def to_dict(self):
         return {
@@ -24,5 +26,7 @@ class Video:
             'transcription': [t.to_dict() for t in self.transcription] if self.transcription else None,
             'description': self.description,
             'resume': self.resume,
-            'category': self.category
+            'category': self.category,
+            'cod': self.cod,
+            'title': self.title
         }

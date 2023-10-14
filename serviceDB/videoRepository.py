@@ -17,6 +17,9 @@ class DataBaseConnection:
         try:
             for vid in videos:
                 self.collection.insert_one(vid.to_dict())
+                print(f"Inserted video: {vid.cod}")
+
+            print("-- DATA LOADED SUCCESSFULLY --")
         except Exception as e:
             print(f"Error inserting videos: {e}")
 
