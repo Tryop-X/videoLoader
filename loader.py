@@ -1,10 +1,8 @@
-from youtube_transcript_api import YouTubeTranscriptApi
+from   import YouTubeTranscriptApi
 from models import video as vid
 from serviceDB import videoRepository
-import json
 from concurrent.futures import ThreadPoolExecutor
 from pytube import YouTube
-
 
 with open('listaVideos.txt', 'r') as file:
     urls = file.readlines()
@@ -13,7 +11,6 @@ urls = [url.strip() for url in urls]
 
 videos = []
 videos_fail = []
-
 
 def get_transcription(transcript_list):
     for t in transcript_list:
